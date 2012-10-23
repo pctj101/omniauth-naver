@@ -5,9 +5,12 @@ module OmniAuth
   module Strategies
     class Naver < OmniAuth::Strategies::OAuth
       option :name, 'naver'
-      option :client_options, {:authorize_path => '/naver.oauth',
-                               :site => 'https://nid.naver.com',
-										 :proxy => ENV['http_proxy'] ? URI(ENV['http_proxy']) : nil}
+      option :client_options, {
+            :request_token_path => "/naver.oauth?mode=req_req_token",
+            :authorize_path     => "/naver.oauth?mode=auth_req_token",
+            :access_token_path  => "/naver.oauth?mode=req_acc_token",
+            :site => 'https://nid.naver.com',
+	    :proxy => ENV['http_proxy'] ? URI(ENV['http_proxy']) : nil}
 
       uid { access_token.params[:user_id] }
 
