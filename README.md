@@ -2,7 +2,7 @@
 
 This gem contains the Naver strategy for OmniAuth.
 
-Naver uses the OAuth 1.0a flow, you can read about it here: https://dev.naver.com/docs/auth/oauth
+Naver uses the OAuth 1.0a flow, you can read about it here: http://dev.naver.com/openapi/apis/oauth/guide
 
 ## How To Use It
 
